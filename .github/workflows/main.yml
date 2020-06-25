@@ -9,10 +9,11 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         run: |
           npx @11ty/eleventy
           aws s3 cp \
             --recursive \
             --acl public-read \
             --region us-east-1 \
-            ./_site/ [s3://ruralmural.org]
+            ./_site/ [s3://AWS_S3_BUCKET]
