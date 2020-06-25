@@ -1,0 +1,23 @@
+{
+  "name": "rural-mural-website",
+  "version": "1.0.0",
+  "description": "This is the public website for the Rural Mural Project, which is a public art and advocacy organization based in Morgantown, WV, USA. The website is built using open source tools and platforms including [Node.js](https://nodejs.org/), [11ty](https://www.11ty.dev/), and template sourced from [HTML5up](https://html5up.net/). The site is built and deployed using [Amazon Web Services](https://aws.amazon.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rural-Mural/rural-mural-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rural-Mural/rural-mural-website/issues"
+  },
+  "homepage": "https://github.com/Rural-Mural/rural-mural-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
