@@ -12,8 +12,4 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         run: |
           npx @11ty/eleventy
-          aws s3 cp \
-            --recursive \
-            --acl public-read \
-            --region us-east-1 \
-            ./_site/ [s3://AWS_S3_BUCKET]
+          aws s3 cp --recursive --acl public-read --region us-east-1 ./_site/ s3://AWS_S3_BUCKET
