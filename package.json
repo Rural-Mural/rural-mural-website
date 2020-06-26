@@ -11,13 +11,27 @@
     "url": "git+https://github.com/Rural-Mural/rural-mural-website.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Jesse Heady",
+    "email": "jesse@heady.name",
+    "url": "https://jesseheady.com/"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Rural-Mural/rural-mural-website/issues"
   },
   "homepage": "https://github.com/Rural-Mural/rural-mural-website#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
-  }
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.3",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "fs-extra": "^9.0.1",
+    "luxon": "^1.21.3",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.2.5",
+    "path": "^0.12.7",
+    "sass": "^1.26.9"
+  },
+  "dependencies": {}
 }
