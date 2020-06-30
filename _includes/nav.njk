@@ -1,0 +1,30 @@
+
+        {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+        <!-- Nav -->
+        <div id="nav">
+          <ul>
+          {%- for entry in collections.all | eleventyNavigation %}
+            <li class="current nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+          {%- endfor %}
+          </ul>
+        </div>
+
+
+        {# <nav id="nav">
+          <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li>
+              <a href="#" name="navigation dropdown">Dropdown</a>
+              <ul>
+                <li><a href="#" name="">Lorem ipsum dolor</a></li>
+                <li>
+                  <a href="#">Phasellus consequat</a>
+                  <ul>
+                    <li><a href="#" name="">Magna phasellus</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" name="">Veroeros feugiat</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav> #}

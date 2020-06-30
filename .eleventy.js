@@ -1,16 +1,12 @@
-const sass = require('./config/sass-process');
+const fs = require('fs');
+const cleanCSS = require("clean-css");
 const { DateTime } = require("luxon");
-const fs = require('fs-extra');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-
-module.exports = config => {
-    //Watching for modificaions in style directory
-    sass('./assets/sass/main.scss', './assets/css/main.css');
-}
+const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -18,6 +14,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new cleanCSS({}).minify(code).styles;
+  });
+
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
@@ -35,6 +36,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPlugin(lazyImagesPlugin);
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
