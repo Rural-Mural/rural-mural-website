@@ -14,3 +14,4 @@ jobs:
           gulp css
           npx @11ty/eleventy
           aws s3 cp --recursive --acl public-read --region us-east-1 ./_site/ s3://ruralmural.org
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} --paths "/*"
