@@ -4,7 +4,7 @@
         <div id="nav">
           <ul>
           {%- for entry in collections.all | eleventyNavigation %}
-            <li class="current nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+            <li class="{% if entry.url == page.url %}current{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
           {%- endfor %}
           </ul>
         </div>
