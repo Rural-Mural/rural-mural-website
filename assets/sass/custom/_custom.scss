@@ -17,15 +17,16 @@
   padding: 0;
 }
 #header div.head-nav-hero {
-  background: linear-gradient(-45deg, magenta, transparent), linear-gradient(-90deg, yellow, transparent);
-  background-blend-mode: burn ;
-  padding-top: 4em;
+  background: linear-gradient(-45deg, hotpink, transparent), linear-gradient(180deg, cyan, transparent), linear-gradient(45deg, yellow, transparent);
+  background-blend-mode:  color-dodge ;
+  padding-top: 2.5em;
 }
 
 #banner {
   // height: 60vh;
   background: linear-gradient(cyan, transparent), linear-gradient(-45deg, magenta, transparent), linear-gradient(45deg, yellow, transparent), url("../images/IMG_0101.JPG") center center / cover no-repeat;
   background-blend-mode: multiply;
+  margin-top: 2.5em;
 }
 
 #logo img {
@@ -44,9 +45,9 @@
 
 #logo a span {
   position: relative;
-  top: -30px;
+  top: -20px;
   @include breakpoint('<=medium') {
-    top: -20px;
+    top: -15px;
   }
   @include breakpoint('<=small') {
     top: -10px;
