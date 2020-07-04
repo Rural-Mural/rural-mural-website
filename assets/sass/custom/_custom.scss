@@ -13,6 +13,14 @@
 // 		background: linear-gradient(90deg, hotpink, rebeccapurple);
 //   }
 // }
+#header {
+  padding: 0;
+}
+#header div.head-nav-hero {
+  background: linear-gradient(-45deg, magenta, transparent), linear-gradient(-90deg, yellow, transparent);
+  background-blend-mode: burn ;
+  padding-top: 4em;
+}
 
 #banner {
   // height: 60vh;
@@ -22,15 +30,15 @@
 
 #logo img {
   // float: left;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   @include breakpoint('<=medium') {
     width: 50px;
     height: 50px;
   }
   @include breakpoint('<=small') {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }
 
