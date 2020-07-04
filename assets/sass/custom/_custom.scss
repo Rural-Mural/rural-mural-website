@@ -1,0 +1,21 @@
+// body {
+//   background: linear-gradient(90deg, red, cyan);
+//   min-height: 100vh;
+//
+//   &:before {
+// 		content: "";
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		bottom: 0;
+//     right: 0;
+// 		mask-image: linear-gradient(to bottom, transparent, black);
+// 		background: linear-gradient(90deg, hotpink, rebeccapurple);
+//   }
+// }
+
+#banner {
+  height: 60vh;
+  background: linear-gradient( cyan, transparent), linear-gradient( -45deg, magenta, transparent), linear-gradient( 45deg, yellow, transparent), url('../images/IMG_0101.JPG') center center / cover no-repeat;
+  background-blend-mode: multiply;
+}
