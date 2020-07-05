@@ -17,8 +17,8 @@
   padding: 0;
 }
 #header div.head-nav-hero {
-  background: linear-gradient(-45deg, hotpink, transparent), linear-gradient(180deg, cyan, transparent), linear-gradient(45deg, yellow, transparent), linear-gradient(90deg, #000, transparent) ;
-  background-blend-mode: luminosity ;
+  background: linear-gradient(-45deg, hotpink, transparent), linear-gradient(180deg, cyan, transparent), linear-gradient(45deg, yellow, transparent), linear-gradient(90deg, yellow, transparent) ;
+  background-blend-mode: exclusion;
   padding-top: 2.5em;
 }
 
@@ -44,6 +44,7 @@
 }
 
 #logo a span {
+  color: #fff;
   position: relative;
   top: -20px;
   @include breakpoint('<=medium') {
@@ -52,4 +53,8 @@
   @include breakpoint('<=small') {
     top: -10px;
   }
+}
+
+#nav ul li a &:hover, &.active {
+  color: #fff;
 }
