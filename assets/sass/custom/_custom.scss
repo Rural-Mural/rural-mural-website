@@ -55,6 +55,167 @@
   }
 }
 
-#nav ul li a &:hover, &.active {
-  color: #fff;
-}
+
+/* Nav */
+
+	#nav {
+		margin: 2.5em 0 0 0;
+
+		> ul {
+			margin: 0;
+
+			> li {
+				display: inline-block;
+				font-style: italic;
+				margin: 0 0.35em 0 0.35em;
+
+				> ul {
+					display: none;
+				}
+
+				> a {
+					border-radius: 5px;
+					color: #5d5d5d;
+					text-decoration: none;
+					padding: 0.6em 1.2em 0.6em 1.2em;
+					@include vendor('transition', 'background-color .25s ease-in-out');
+					outline: 0;
+				}
+
+				&:hover, &.active {
+					> a {
+						background: #f3f3f3;
+					}
+				}
+
+				&.current {
+					> a {
+						background: #d52349;
+						color: #fff !important;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+
+	.dropotron {
+		border-radius: 5px;
+		background-color: #252122;
+		background-color: rgba(34, 30, 31, 0.98);
+		padding: 1.25em 1.5em 1.25em 1.5em;
+		font-style: italic;
+		min-width: 13em;
+		box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
+		text-align: left;
+		margin-top: -1.25em;
+		margin-left: -1px;
+		list-style: none;
+
+		a, span {
+			color: #aaa;
+			text-decoration: none;
+			@include vendor('transition', 'color .25s ease-in-out');
+		}
+
+		li {
+			padding: 0.25em 0 0.25em 0;
+
+			&:hover > {
+				a, span {
+					color: #fff;
+				}
+			}
+		}
+
+		&.level-0 {
+			margin-top: 2em;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				margin-left: -10px;
+				top: -9px;
+				border-left: solid 10px transparent;
+				border-right: solid 10px transparent;
+				border-bottom: solid 10px #252122;
+				border-bottom-color: rgba(34, 30, 31, 0.98);
+			}
+		}
+	}
+
+
+
+/* Icons */
+
+	.icon {
+		@include icon;
+		position: relative;
+		text-decoration: none;
+
+		&.solid {
+			&:before {
+				font-weight: 900;
+			}
+		}
+
+		&.brands {
+			&:before {
+				font-family: 'Font Awesome 5 Brands';
+			}
+		}
+
+		&:before {
+			line-height: inherit;
+		}
+
+		> .label {
+			display: none;
+		}
+
+		&.featured {
+			position: relative;
+			display: inline-block;
+			background-color: #d52349;
+			width: 9em;
+			padding: 1.75em 0 0.75em 0;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			margin: 0 0 4.5em 0;
+			cursor: default;
+
+			&:before {
+				font-size: 4.5em;
+				line-height: 1em;
+				color: #fff;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -1.95em;
+				left: 0;
+				border-top: solid 2em #d52349;
+				border-left: solid 4.5em transparent;
+				border-right: solid 4.5em transparent;
+			}
+
+			&.alt {
+				background-color: #252122;
+
+				&:after {
+					border-top-color: #252122;
+				}
+			}
+
+			&.alt2 {
+				background-color: #827a7c;
+
+				&:after {
+					border-top-color: #827a7c;
+				}
+			}
+		}
+	}

@@ -4,6 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="{{ renderData.description or description or metadata.description }}">
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
 		{% include "scripts.njk" %}
   </head>
